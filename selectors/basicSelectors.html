@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-size: 18px;
+        font-weight: 700;
+      }
+      /* start with most broad specificity, e.g. element and then go specific if need be */
+      /* element selector has least specificity here. 0-0-1; */
+      li {
+        color: green;
+      }
+      /* cascade effect on specificity -
+          if you move li_style2 after li_style, Item2 color will become yellow.
+          if two ruleset has same specificity, the ruleset which come latest get applied.
+      */
+      .li_style2 {
+        color: yellow;
+      }
+      /* class selector has second hightest specificity here. 0-1-0; */
+      .li_style {
+        color: red;
+      }
+      /* id and class name are case sensitive */
+      /* id selector has hightest specificity here. 1-0-0; */
+      #id1 {
+        color: blue;
+      }
+
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li id="id1" class="li_style">Item 1</li>
+      <li class="li_style">Item 2</li>
+      <li class="li_style li_style2">Item 3</li>
+      <li>Item 4</li>
+    </ul>
+  </body>
+</html>
