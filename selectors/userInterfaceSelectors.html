@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    /* Based on current state of UI */
+    /* How to read following selectors:- */
+    /* select any label which comes right after checked input element */
+    input[type=checkbox]:checked+label {
+      color: red;
+    }
+    input[type=checkbox]:disabled+label {
+      color: grey;
+    }
+    /* other two ui states are enabled and indeterminate */
+    /* Form related ui pseudo classes */
+    input[type="text"]:required {
+      color: red;
+    }
+
+    input[type="text"]:required+span:after {
+      content: "*";
+    }
+
+    input[type=text]:invalid {
+      background-color: orange;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="checkbox" />
+  <label>First Checkbox</label>
+
+  <input type="checkbox" />
+  <label>Second Checkbox</label>
+
+  <input type="checkbox" disabled />
+  <label>Third Checkbox</label>
+  <form>
+    <fieldset>
+      <label>Salutation: </label>
+      <input type="text" required value="Mr" />
+      <span></span>
+    </fieldset>
+    <fieldset>
+      <label for="name">Enter username (upper and lowercase letters): </label>
+      <input type="text" name="name" id="name" required pattern="[A-Za-z]+">
+    </fieldset>
+  </form>
+</body>
+
+</html>
