@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="../style/common.css" rel="stylesheet">
+  <style>
+    a:link {
+      color: blue;
+    }
+
+    a:visited {
+      color: lightblue;
+    }
+
+    a:visited+span:after {
+      content: "visited*";
+    }
+
+    a:hover, button:hover {
+      font-style: italic;
+    }
+
+    a:focus, button:focus {
+      font-style: italic;
+    }
+
+    a:active, button:active {
+      font-weight: 800;
+    }
+    section:target {
+      display: block;
+    }
+    section:not(:target) {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Pseudo Classes</h1>
+  <div><a href="#anchor">Anchor Section</a></div>
+  <div><a href="#stateBasedPseudo">Button Section</a></div>
+  <section id="anchor">
+    <h1>Anchor Tag specific pseudo clsses</h1>
+    <p>A CSS pseudo-class is a keyword added to a selector that specifies a special state of the selected element(s).
+      For example, :hover can be used to change a button's color when the user's pointer hovers over it.</p>
+    <p>MDN refererence of pseudo-class <a tabindex="1" target="blank"
+        href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes">External Link</a></p>
+
+    <a tabindex="2" target="blank" href="https://maryrosecook.com/blog/">
+      Mary Rose Cook blog
+    </a>
+    <span></span>
+    <a tabindex="3" title="a good resource on accessibility and anchor tag"
+      href="https://htmldog.com/guides/html/advanced/links/">
+      Anchor and accessibility - Also a very good HTML-CSS Resource
+    </a>
+  </section>
+  <section id="stateBasedPseudo">
+    <h1>State based pseudo classes - hover, focus, active</h1>
+    <button tabindex="1">Button A</button>
+    <button tabindex="2">Button B</button>
+    <button tabindex="3">Button C</button>
+  </section>
+</body>
+
+</html>

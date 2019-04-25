@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    ul {
+      width: 15em;
+    }
+    /* Struct
+    /* nth pseudo classes */
+    /* note the space after class-name .firstList is targetting child elements of .firstList*/
+    /* use of Space is significant, it denotes the CHILD */
+    .listsForChildSelectors .firstList :nth-child(3n) {
+      color: blue;
+    }
+
+    /* nth pseudo classes */
+    /* note NO space after class-name, hence, listItem itself is selector*/
+    /* following rule is applied to both, secondList and thirdList */
+    .listsForChildSelectors .listItem:nth-child(3n) {
+      color: blue;
+    }
+
+    .listsForChildSelectors .thirdList :first-child {
+      color: green;
+    }
+
+    .listsForChildSelectors .thirdList :last-child {
+      color: green;
+    }
+
+    .listsForChildSelectors li:first-child {
+      text-decoration: underline;
+    }
+
+    .listsForChildSelectors li:last-child {
+      text-decoration: underline;
+    }
+
+    .listsForChildSelectors li:nth-child(even) {
+      background-color: lightblue;
+    }
+    /* :not(s) where s is simple selector, does not allow any combinator */
+    /* it also can't have multiple selectors separated by , (comma), safari only */
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/:not */
+    .selectorForNegationAndMatching div:not(.excludeMe)  {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="listsForChildSelectors">
+    <ul class="firstList">
+      <li>Sunday</li>
+      <li>Monday</li>
+      <li>Tuesday</li>
+      <li>Wednesday</li>
+      <li>Thursday</li>
+      <li>Friday</li>
+      <li>Saturday</li>
+    </ul>
+
+    <ul class="secondList">
+      <li class="listItem">Sunday</li>
+      <li class="listItem">Monday</li>
+      <li class="listItem">Tuesday</li>
+      <li class="listItem">Wednesday</li>
+      <li class="listItem">Thursday</li>
+      <li class="listItem">Friday</li>
+      <li class="listItem">Saturday</li>
+    </ul>
+
+    <ul class="thirdList">
+      <li class="listItem">Sunday</li>
+      <li class="listItem">Monday</li>
+      <li class="listItem">Tuesday</li>
+      <li class="listItem">Wednesday</li>
+      <li class="listItem">Thursday</li>
+      <li class="listItem">Friday</li>
+      <li class="listItem">Saturday</li>
+    </ul>
+  </div>
+
+  <div class="selectorForNegationAndMatching">
+    <div class="excludeMe">
+      This is the div with no Color red. example of negation <a href="pesudoClassSelectors.html">pseudo class</a>
+    </div>
+    <div>
+        This is the div which is red
+      </div>
+  </div>
+</body>
+
+</html>
