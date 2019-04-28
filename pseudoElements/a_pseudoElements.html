@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="../style/common.css" rel="stylesheet">
+  <style>
+    p:first-of-type::first-letter {
+      position: relative;
+      top: 8px;
+      font-size: 3em;
+      line-height: 1;
+      color: hsl(205, 87%, 50%);
+      padding: 0 4px 2px 0;
+      font-weight: bold;
+    }
+    .diffSelection {
+      height: 5em;
+      width: 30em;
+    }
+    .diffSelection::selection {
+      background-color: #990000;
+      color: #ffffff;
+    }
+  </style>
+</head>
+
+<body>
+  <p class="diffSelection">
+    Pseudo-elements create "faux" elements you can style.
+    Pseudo-Elements should be prefixed with "Double Colon ::",
+    single colon works, but correct syntax is ::
+  </p>
+  <p>
+    Pseudo-clases select elements that already exist, based on it's "state".
+  </p>
+  <p>List of Pseudo Elements</p>
+  <ul>
+    <li>::first-line</li>
+    <li>::first-letter</li>
+    <li>::before</li>
+    <li>::after</li>
+  </ul>
+  <textarea class="diffSelection">
+
+  </textarea>
+</body>
+
+</html>

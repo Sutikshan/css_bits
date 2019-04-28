@@ -7,24 +7,32 @@
       font-size: 18px;
       font-weight: 700;
     }
+    /* + is combinator which denotes adjacent sibling. Due to usage of class, it has 0-1-1 specificity */
+    li.hasclass + li {
+      color: green;
+    }
 
-    /* space is combinator and it denotes descendant. */
+    /* space is combinator and it denotes descendant. Descendants are different from child, it go to any level deep 0-0-1 */
     ul li {
       color: red;
     }
 
-    /* > greater than sign is combinator, denotes, childs*/
-    ol > li {
+    /* > greater than sign is combinator, denotes, childs, Childs are only "direct" descendant 0-0-1 */
+    ul > li {
       color: blue;
     }
-    /* + is combinator which denotes adjacent sibling */
-    li.hasclass + li {
-      color: green;
-    }
+
+
   </style>
 </head>
 
 <body>
+  <ul>
+    <li>descendant selector (space)</li>
+    <li>child selector (>)</li>
+    <li>adjacent sibling selector (+)</li>
+    <li>general sibling selector (~)</li>
+  </ul>
   <ul>
     <li>Item 1</li>
     <li>
